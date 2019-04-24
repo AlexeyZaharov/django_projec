@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="row mt-5">
+        <div class="col-4">
+            <a href="{% url 'index' %}"><u>New Questions</u></a>
+        </div>
+        <div class="col-4">
+            <h4>Hot Questions(3)</h4>
+        </div>
+    </div>
+    {% for question in questions %}
+        {% include "inc/q.html" %}
+    {% endfor %}
+    {% include 'paginator.html' %}
+{% endblock %}
